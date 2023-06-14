@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+
 export const AnotherTest = () => {
   const [text, setText] = useState('hi')
   useEffect(() => {
@@ -12,6 +13,7 @@ export const AnotherTest = () => {
       }
     }
     getdata()
+    return () => console.log('clean up')
   }, [text])
   return (
     <div>

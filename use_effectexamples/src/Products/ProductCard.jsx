@@ -1,10 +1,10 @@
 import classes from './productCard.module.css'
 export const Product = ({ title, price, image, description }) => {
   return (
-    <div>
+    <div className={classes.container}>
       <h1>{title}</h1>
       <img className={classes.image} src={image} alt={title} />
-      <p>{description}</p>
+      <p className={classes.description}>{description}</p>
       <span>{price}</span>
     </div>
   )

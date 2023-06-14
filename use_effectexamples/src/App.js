@@ -1,15 +1,9 @@
-import { useEffect } from 'react'
-import { AnotherTest } from './AnotherTest'
-import { ProductList } from './Products'
+import { ProductList } from './Products/Products'
 
 function App() {
-  console.log('render')
-  useEffect(() => {
-    console.log('onMount')
-  })
   return (
-    <div className="App">
-      <AnotherTest />
+    <div>
+      <ProductList />
     </div>
   )
 }
