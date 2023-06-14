@@ -5,6 +5,7 @@ export const ProductList = () => {
   const [products, setProducts] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
+
   useEffect(() => {
     const getdata = async () => {
       try {

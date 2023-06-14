@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Test } from './Test'
+import { AnotherTest } from './AnotherTest'
 import { ProductList } from './Products'
 
 function App() {
@@ -9,8 +9,7 @@ function App() {
   })
   return (
     <div className="App">
-      <Test />
-      <ProductList />
+      <AnotherTest />
     </div>
   )
 }
