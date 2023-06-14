@@ -3,6 +3,7 @@ import { Product } from './ProductCard'
 import { postData } from '../utils'
 import classes from './productList.module.css'
 import { Form } from './Form'
+import axios from 'axios'
 
 export const ProductList = () => {
   const [products, setProducts] = useState([])
@@ -13,10 +14,11 @@ export const ProductList = () => {
     const getdata = async () => {
       setIsLoading(true)
       try {
-        const response = await fetch('https://api.escuelajs.co/api/v1/products?limit=7&offset=1')
-        const data = await response.json()
+        const response = await axios.get(
+          'https://api.escuelajs.co/api/v1/products?limit=7&offset=1'
+        )
 
-        setProducts(data)
+        setProducts(response.data)
         setIsLoading(false)
       } catch (error) {
         console.error('Error:', error)

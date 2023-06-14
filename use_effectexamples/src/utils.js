@@ -1,21 +1,20 @@
+import axios from 'axios'
+
 export const postData = async (requestBody) => {
   const url = 'https://api.escuelajs.co/api/v1/products'
-
+  console.log(requestBody)
   try {
-    const response = await fetch(url, {
-      method: 'POST',
+    const response = await axios.post(url, requestBody, {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(requestBody),
     })
-
-    if (!response.ok) {
+    console.log(response.data)
+    if (response.status !== 201) {
       throw new Error('Request failed')
     }
-
-    const data = await response.json()
-    return data
+    console.log(response)
+    return response.data
   } catch (error) {
     console.error('Error:', error)
     throw error

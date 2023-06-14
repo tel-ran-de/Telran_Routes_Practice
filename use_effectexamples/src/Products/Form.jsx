@@ -23,7 +23,7 @@ export const Form = ({ addNewProduct }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlfor="title">title</label>
+      <label htmlFor="title">title</label>
       <input
         type="text"
         id="title"
@@ -31,7 +31,7 @@ export const Form = ({ addNewProduct }) => {
         value={product.title}
         onChange={(e) => setProduct((prev) => ({ ...prev, title: e.target.value }))}
       />
-      <label htmlfor="price">price</label>
+      <label htmlFor="price">price</label>
       <input
         type="number"
         id="price"
@@ -39,7 +39,7 @@ export const Form = ({ addNewProduct }) => {
         value={product.price}
         onChange={(e) => setProduct((prev) => ({ ...prev, price: e.target.value }))}
       />
-      <label htmlfor="description">description</label>
+      <label htmlFor="description">description</label>
       <input
         type="text"
         id="description"
