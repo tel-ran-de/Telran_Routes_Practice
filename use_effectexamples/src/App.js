@@ -3,7 +3,7 @@ import { ItemList } from './Products/ItemList'
 import { ApiContext, ThemeContext } from './contexts'
 import classes from './app.module.css'
 import { AddItem } from './Products/AddItem'
-import { postItem } from './utils'
+import { postItem, deleteItem } from './utils'
 import { Button } from './Button'
 
 function App() {
@@ -29,15 +29,24 @@ function App() {
     getdata()
   }, [])
 
-  const postData = async (obj) => {
+  const postItemHandler = async (obj) => {
     const data = await postItem(obj)
     console.log(data)
     setItems([...items, data])
   }
 
+  const deleteItemHandler = async (id) => {
+    const response = await deleteItem(id)
+
+    response.ok
+      ? setItems((prevItems) => prevItems.filter((item) => item.id !== id))
+      : console.log("We've got a prob")
+  }
+
   return (
     <ThemeContext.Provider value={theme}>
-      <ApiContext.Provider value={{ items, postData }}>
+      lem
+      <ApiContext.Provider value={{ items, postItemHandler, deleteItemHandler }}>
         <div>
           <button
             onClick={() => {

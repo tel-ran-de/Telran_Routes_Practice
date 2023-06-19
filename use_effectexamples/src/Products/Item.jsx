@@ -1,16 +1,18 @@
 import classes from './item.module.css'
 import { useContext } from 'react'
-import { ThemeContext } from '../contexts'
+import { ApiContext, ThemeContext } from '../contexts'
 
-export const Item = ({ title, price, image, description }) => {
+export const Item = ({ title, price, image, description, id }) => {
   const theme = useContext(ThemeContext)
-  console.log(theme)
+  const { deleteItemHandler } = useContext(ApiContext)
+
   return (
     <div className={`${classes.item} ${classes[theme]}`}>
       <h1>{title}</h1>
       <img className={classes.image} src={image} alt={title} />
       <p className={classes.description}>{description}</p>
       <span>{price}$</span>
+      <button onClick={() => deleteItemHandler(id)}>Delete me NOW</button>
     </div>
   )
 }

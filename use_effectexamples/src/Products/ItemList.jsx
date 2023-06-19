@@ -5,7 +5,6 @@ import { ApiContext } from '../contexts'
 
 export const ItemList = () => {
   const { items } = useContext(ApiContext)
-  console.log(items)
 
   return (
     <div>
@@ -17,6 +16,7 @@ export const ItemList = () => {
             description={product.description}
             title={product.title}
             price={product.price}
+            id={product.id}
           />
         ))}
       </div>

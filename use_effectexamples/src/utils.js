@@ -23,3 +23,25 @@ export const postItem = async (requestBody) => {
     throw error
   }
 }
+
+export const deleteItem = async (id) => {
+  const url = `https://api.escuelajs.co/api/v1/products/${id}`
+
+  try {
+    const response = await fetch(url, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+
+    if (!response.ok) {
+      throw new Error('Request failed')
+    }
+    return response
+    console.log('Product deleted successfully')
+  } catch (error) {
+    console.error('Error:', error)
+    throw error
+  }
+}
