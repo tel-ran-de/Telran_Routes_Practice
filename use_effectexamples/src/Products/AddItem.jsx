@@ -1,7 +1,12 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import classes from './addItem.module.css'
+import { ApiContext } from '../contexts'
 
-export const Form = ({ addNewProduct }) => {
+export const AddItem = ({ addNewProduct }) => {
+  const { postData } = useContext(ApiContext)
+
   const [product, setProduct] = useState({
+    id: new Date(),
     title: '',
     price: 1,
     description: '',
@@ -11,8 +16,10 @@ export const Form = ({ addNewProduct }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    addNewProduct(product)
+
+    postData(product)
     setProduct({
+      id: new Date(),
       title: '',
       price: 1,
       description: '',
@@ -22,7 +29,7 @@ export const Form = ({ addNewProduct }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={classes.form} onSubmit={handleSubmit}>
       <label htmlFor="title">title</label>
       <input
         type="text"
