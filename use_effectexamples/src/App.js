@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react'
 import { ItemList } from './Products/ItemList'
-import { ApiContext } from './contexts'
+import { ApiContext, ThemeContext } from './contexts'
 import classes from './app.module.css'
 import { AddItem } from './Products/AddItem'
 import { postItem } from './utils'
+import { Button } from './Button'
 
 function App() {
   const [items, setItems] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [theme, setTheme] = useState('dark')
 
   useEffect(() => {
     const getdata = async () => {
@@ -34,15 +36,26 @@ function App() {
   }
 
   return (
-    <ApiContext.Provider value={{ items, postData }}>
-      <div>
-        <div className={classes.addItemContainer}>
-          <AddItem />
+    <ThemeContext.Provider value={theme}>
+      <ApiContext.Provider value={{ items, postData }}>
+        <div>
+          <button
+            onClick={() => {
+              console.log('sdfsd')
+              setTheme(theme === 'dark' ? 'light' : 'dark')
+            }}
+          >
+            Toggle theme
+          </button>
+          <Button> AYE</Button>
+          <div className={classes.addItemContainer}>
+            <AddItem />
+          </div>
+          {isLoading ? <h1>LOADING...</h1> : <ItemList />}
+          {error && <h1>An error occurred: {error.message}</h1>}
         </div>
-        {isLoading ? <h1>LOADING...</h1> : <ItemList />}
-        {error && <h1>An error occurred: {error.message}</h1>}
-      </div>
-    </ApiContext.Provider>
+      </ApiContext.Provider>
+    </ThemeContext.Provider>
   )
 }
 

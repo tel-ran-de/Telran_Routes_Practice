@@ -1,8 +1,6 @@
 import { useContext, useState } from 'react'
 import { Item } from './Item'
-import { AddItem } from './AddItem'
 import classes from './itemList.module.css'
-import { postData } from '../utils'
 import { ApiContext } from '../contexts'
 
 export const ItemList = () => {
