@@ -39,7 +39,6 @@ export const deleteItem = async (id) => {
       throw new Error('Request failed')
     }
     return response
-    console.log('Product deleted successfully')
   } catch (error) {
     console.error('Error:', error)
     throw error

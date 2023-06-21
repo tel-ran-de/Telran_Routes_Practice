@@ -1,9 +1,9 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { Item } from './Item'
 import classes from './itemList.module.css'
 import { ApiContext } from '../contexts'
 
-export const ItemList = () => {
+export function ItemList() {
   const { items } = useContext(ApiContext)
 
   return (

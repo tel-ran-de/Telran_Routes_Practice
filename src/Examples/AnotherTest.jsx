@@ -18,9 +18,15 @@ export const AnotherTest = () => {
   return (
     <div>
       <h1>{text}</h1>
-      <button onClick={() => setText('products')}>Products</button>
-      <button onClick={() => setText('users')}>Users</button>
-      <button onClick={() => setText('categories')}>Categories</button>
+      <button type="button" onClick={() => setText('products')}>
+        Products
+      </button>
+      <button type="button" onClick={() => setText('users')}>
+        Users
+      </button>
+      <button type="button" onClick={() => setText('categories')}>
+        Categories
+      </button>
     </div>
   )
 }

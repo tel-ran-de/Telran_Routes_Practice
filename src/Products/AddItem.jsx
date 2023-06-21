@@ -2,7 +2,7 @@ import { useContext, useState } from 'react'
 import classes from './addItem.module.css'
 import { ApiContext } from '../contexts'
 
-export const AddItem = ({ addNewProduct }) => {
+export const AddItem = () => {
   const { postItemHandler } = useContext(ApiContext)
 
   const [product, setProduct] = useState({
@@ -30,30 +30,42 @@ export const AddItem = ({ addNewProduct }) => {
 
   return (
     <form className={classes.form} onSubmit={handleSubmit}>
-      <label htmlFor="title">title</label>
-      <input
-        type="text"
-        id="title"
-        name="title"
-        value={product.title}
-        onChange={(e) => setProduct((prev) => ({ ...prev, title: e.target.value }))}
-      />
-      <label htmlFor="price">price</label>
-      <input
-        type="number"
-        id="price"
-        name="price"
-        value={product.price}
-        onChange={(e) => setProduct((prev) => ({ ...prev, price: e.target.value }))}
-      />
-      <label htmlFor="description">description</label>
-      <input
-        type="text"
-        id="description"
-        name="description"
-        value={product.description}
-        onChange={(e) => setProduct((prev) => ({ ...prev, description: e.target.value }))}
-      />
+      <label htmlFor="title">
+        title
+        <input
+          type="text"
+          id="title"
+          name="title"
+          value={product.title}
+          onChange={(e) =>
+            setProduct((prev) => ({ ...prev, title: e.target.value }))
+          }
+        />
+      </label>
+      <label htmlFor="price">
+        price
+        <input
+          type="number"
+          id="price"
+          name="price"
+          value={product.price}
+          onChange={(e) =>
+            setProduct((prev) => ({ ...prev, price: e.target.value }))
+          }
+        />
+      </label>
+      <label htmlFor="description">
+        description
+        <input
+          type="text"
+          id="description"
+          name="description"
+          value={product.description}
+          onChange={(e) =>
+            setProduct((prev) => ({ ...prev, description: e.target.value }))
+          }
+        />
+      </label>
       <button type="submit">ADD</button>
     </form>
   )
