@@ -43,3 +43,12 @@
   color: #000000;
   background: #ffffff;
 }
+
+.button {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background: rgb(120, 217, 183);
+  width: 90%;
+  height: 9%;
+}
