@@ -9,7 +9,9 @@ export const TwoInput = () => {
   return (
     <div>
       <p>{count}</p>
-      <button onClick={() => setCount((prev) => prev + 1)}>PRESS</button>
+      <button type="button" onClick={() => setCount((prev) => prev + 1)}>
+        PRESS
+      </button>
       <input onChange={(e) => setName(e.target.value)} />
       <p>{name}</p>
     </div>

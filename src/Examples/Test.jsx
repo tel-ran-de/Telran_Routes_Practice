@@ -14,7 +14,9 @@ export const Test = () => {
   return (
     <div>
       <p>{count}</p>
-      <button onClick={handleCount}>увеличь</button>
+      <button type="button" onClick={handleCount}>
+        увеличь
+      </button>
     </div>
   )
 }

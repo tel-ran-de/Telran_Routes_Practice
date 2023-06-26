@@ -6,7 +6,6 @@ export const CounterBugExample = () => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      console.log('Incrementing count...')
       setCount((prevCount) => prevCount + 1)
     }, 1000)
 
@@ -15,7 +14,10 @@ export const CounterBugExample = () => {
 
   return (
     <div>
-      <h1>Count: {count}</h1>
+      <h1>
+        Count:
+        {count}
+      </h1>
       <h2>{name}</h2>
       <input onChange={(e) => setName(e.target.value)} />
     </div>

@@ -2,7 +2,7 @@ import { useContext, useState } from 'react'
 import classes from './addItem.module.css'
 import { ApiContext } from '../contexts'
 
-export const AddItem = () => {
+export function AddItem() {
   const { postItemHandler } = useContext(ApiContext)
 
   const [product, setProduct] = useState({
@@ -29,7 +29,7 @@ export const AddItem = () => {
   }
 
   return (
-    <form className={classes.form} onSubmit={handleSubmit}>
+    <form className={classes.formContainer} onSubmit={handleSubmit}>
       <label htmlFor="title">
         title
         <input
@@ -37,9 +37,7 @@ export const AddItem = () => {
           id="title"
           name="title"
           value={product.title}
-          onChange={(e) =>
-            setProduct((prev) => ({ ...prev, title: e.target.value }))
-          }
+          onChange={(e) => setProduct((prev) => ({ ...prev, title: e.target.value }))}
         />
       </label>
       <label htmlFor="price">
@@ -49,9 +47,7 @@ export const AddItem = () => {
           id="price"
           name="price"
           value={product.price}
-          onChange={(e) =>
-            setProduct((prev) => ({ ...prev, price: e.target.value }))
-          }
+          onChange={(e) => setProduct((prev) => ({ ...prev, price: e.target.value }))}
         />
       </label>
       <label htmlFor="description">
@@ -61,9 +57,7 @@ export const AddItem = () => {
           id="description"
           name="description"
           value={product.description}
-          onChange={(e) =>
-            setProduct((prev) => ({ ...prev, description: e.target.value }))
-          }
+          onChange={(e) => setProduct((prev) => ({ ...prev, description: e.target.value }))}
         />
       </label>
       <button type="submit">ADD</button>

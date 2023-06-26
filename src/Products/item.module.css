@@ -6,6 +6,7 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  max-height: max-content;
 }
 
 .item:hover {
@@ -50,5 +51,5 @@
   color: white;
   background: rgb(120, 217, 183);
   width: 90%;
-  height: 9%;
+  height: 50px;
 }
