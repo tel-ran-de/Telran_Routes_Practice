@@ -6,8 +6,6 @@ import classes from './app.module.css'
 import { AddItem } from './Products/AddItem'
 import { postItem, deleteItem } from './utils'
 
-import { LoginForm } from './LoginForm/LoginForm'
-
 function App() {
   const [items, setItems] = useState([])
   const [isLoading, setIsLoading] = useState(false)
@@ -68,7 +66,6 @@ function App() {
               Toggle theme
             </button>
             <Timer />
-            <LoginForm />
           </div>
 
           {isLoading ? <h1>LOADING...</h1> : <ItemList />}
