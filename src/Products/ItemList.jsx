@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { Item } from './Item'
-import classes from './ItemList.module.css'
+import classes from './itemList.module.css'
 import { ApiContext } from '../contexts'
 
 export function ItemList() {
