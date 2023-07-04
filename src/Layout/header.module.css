@@ -2,14 +2,29 @@
   display: flex;
   align-items: center;
   height: 150px;
+  text-decoration: none;
+  color: #000000;
 }
+
 .headerContainer li {
   list-style: none;
+  text-decoration: none;
+  color: #000000;
 }
+
+.headerContainer a {
+  text-decoration: none;
+  color: #000000;
+}
+a.active {
+  color: rgb(120, 217, 183);
+}
+
 .headerContainer ul {
   display: flex;
   gap: 10px;
 }
+
 .toggleButton {
   width: 10%;
   margin: 10%;

@@ -1,4 +1,5 @@
 // import axios from 'axios'
+const dev_url = 'http://127.0.0.1:3333/'
 
 export const postItem = async (requestBody) => {
   const url = 'https://api.escuelajs.co/api/v1/products'

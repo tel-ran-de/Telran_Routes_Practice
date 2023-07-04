@@ -15,13 +15,19 @@ export const Header = ({ theme, setTheme }) => (
     <nav>
       <ul>
         <li>
-          <NavLink to="/about">About</NavLink>
+          <NavLink className={({ isActive }) => (isActive ? classes.active : '')} to="/about">
+            About
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/items">Items</NavLink>
+          <NavLink className={({ isActive }) => (isActive ? classes.active : '')} to="/items">
+            Items
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/timer">Timer</NavLink>
+          <NavLink className={({ isActive }) => (isActive ? classes.active : '')} to="/timer">
+            Timer
+          </NavLink>
         </li>
       </ul>
     </nav>

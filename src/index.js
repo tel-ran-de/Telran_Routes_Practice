@@ -5,6 +5,8 @@ import App from './App'
 import { ItemsPage } from 'Pages/ItemsPage'
 import { Timer } from 'components/Timer'
 import { ErrorPage } from 'Pages/ErrorPage'
+import { SingleItemPage } from 'Pages/SingleItemPage'
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -22,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/items',
         element: <ItemsPage />,
+      },
+      {
+        path: '/items/:id',
+        element: <SingleItemPage />,
       },
     ],
   },
